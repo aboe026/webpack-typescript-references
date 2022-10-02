@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "build" // TODO: figute out how to use referenced ts libs within webpack.config.ts without needing to first do tsc --build (and having to remove non-webpack build after)
+  },
+  "extends": "../../tsconfig",
+  "include": ["src/*"],
+  "ts-node": {
+    // TODO: figure out how to use parent project ts-node so don't need to duplicate it in the package.json
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "references": [{ "path": "../../libs/env" }]
+}

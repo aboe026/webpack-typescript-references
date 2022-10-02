@@ -1,0 +1,34 @@
+{
+  "name": "@webpack-typescript-references/client",
+  "version": "0.1.0",
+  "author": "Adam Boe",
+  "description": "React bundle for webpack-typescript-references",
+  "main": "src/index.ts",
+  "scripts": {
+    "build-workaround": "yarn g:tsc --build && cross-env NODE_ENV=production webpack && yarn g:rimraf build/src",
+    "build": "cross-env NODE_ENV=production webpack",
+    "clean": "yarn g:rimraf build tsconfig.tsbuildinfo",
+    "lint": "yarn g:lint",
+    "lint:fix": "yarn g:lint-fix",
+    "watch": "webpack --watch --progress"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.16",
+    "@types/react": "18.0.19",
+    "@types/react-dom": "18.0.6",
+    "@types/webpack-dev-server": "4.7.2",
+    "@webpack-typescript-references/env": "workspace:*",
+    "cross-env": "7.0.3",
+    "css-loader": "6.7.1",
+    "html-webpack-plugin": "5.5.0",
+    "mini-css-extract-plugin": "2.6.1",
+    "ts-loader": "9.3.1",
+    "ts-node": "10.9.1",
+    "webpack": "5.74.0",
+    "webpack-cli": "4.10.0"
+  }
+}

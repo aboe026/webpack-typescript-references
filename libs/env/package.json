@@ -1,0 +1,19 @@
+{
+  "name": "@webpack-typescript-references/env",
+  "version": "0.1.0",
+  "author": "Adam Boe",
+  "description": "Parse process.env",
+  "main": "build/env.js",
+  "types": "build/env.d.ts",
+  "scripts": {
+    "build": "yarn g:tsc --build",
+    "clean": "yarn g:rimraf build tsconfig.tsbuildinfo",
+    "lint": "yarn g:lint",
+    "lint:fix": "yarn g:lint-fix",
+    "watch": "yarn g:tsc --watch"
+  },
+  "dependencies": {
+    "dotenv": "16.0.2",
+    "envalid": "7.3.1"
+  }
+}

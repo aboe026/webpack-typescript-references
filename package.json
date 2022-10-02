@@ -1,0 +1,40 @@
+{
+  "name": "@webpack-typescript-references/core",
+  "version": "0.1.0",
+  "author": "Adam Boe",
+  "description": "Minimal reproduction of not being able to use typescript references in webpack.config.ts without building them first.",
+  "scripts": {
+    "build": "yarn workspaces foreach --parallel --interlaced run build",
+    "clean": "yarn workspaces foreach --parallel --interlaced run clean",
+    "lint": "yarn g:lint",
+    "lint-fix": "yarn g:lint-fix",
+    "g:lint": "cd $INIT_CWD && eslint . && prettier --check .",
+    "g:lint-fix": "cd $INIT_CWD && eslint --fix . && prettier --write .",
+    "g:nodemon": "cd $INIT_CWD && nodemon",
+    "g:prettier": "cd $INIT_CWD && prettier",
+    "g:rimraf": "cd $INIT_CWD && rimraf",
+    "g:ts-node": "cd $INIT_CWD && ts-node",
+    "g:tsc": "cd $INIT_CWD && tsc",
+    "run-built": "yarn workspaces foreach --parallel --interlaced run run-built",
+    "start": "yarn workspaces foreach --parallel --interlaced run start",
+    "upgrade-dependencies": "ts-node scripts/upgrade-dependencies",
+    "watch": "yarn workspaces foreach --parallel --interlaced run watch"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.16",
+    "@typescript-eslint/eslint-plugin": "5.36.2",
+    "@typescript-eslint/parser": "5.36.2",
+    "eslint": "8.23.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.7.1",
+    "rimraf": "3.0.2",
+    "ts-node": "10.9.1",
+    "typescript": "4.8.3"
+  },
+  "packageManager": "yarn@3.2.3",
+  "workspaces": [
+    "services/*",
+    "libs/*"
+  ]
+}
